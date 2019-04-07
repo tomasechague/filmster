@@ -1,25 +1,20 @@
-Filmster
-===
+# Filmster
 
 Aplicación utilizada en la cursada 2019 de Ingenieria de Software. UTN-FRLP
 
-Dependencias
-===
+## Dependencias
 
-node > v10
-express > v4
+ - node > v10
+ - express > v4
 
-Instalar dependencias
-===
+## Instalar dependencias
 
-npm install
+`npm install`
 
-Iniciar la app en modo desarrollo
-===
+## Iniciar la app en modo desarrollo
 
-npm run dev
+`npm run dev`
 
-Iniciar la app en modo producción
-===
+## Iniciar la app en modo producción
 
-npm start
+`npm start`
