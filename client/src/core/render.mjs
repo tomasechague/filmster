@@ -3,7 +3,7 @@ export function h(type, props={}, children=[]) {
 }
 
 export function createElement(vdom) {
-    if (typeof vdom === 'string') {
+    if (!vdom.type) {
         return vdom
     }
 
