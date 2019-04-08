@@ -1,0 +1,25 @@
+@media (max-width: 600px) {
+    .table thead {
+        display: none;
+    }
+
+    .table tr:not(:last-child) {
+        display: block;
+        padding-bottom: .5rem;
+        margin-bottom: 2rem;
+        border-bottom: 1px solid #dbdbdb;
+    }
+
+    .table td {
+        text-align: right;
+        border: none !important;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .table td::before {
+        padding-right: 1.5rem;
+        content: attr(data-label);
+        font-weight: 700;
+    }
+}
