@@ -4,6 +4,10 @@ input[type=checkbox] {
     margin-right: 5px;
 }
 
+input[type=checkbox]:hover::before {
+    border-color: #00d1b2;
+}
+
 input[type=checkbox]::before {
     content: '';
     margin-top: -3px;
@@ -11,9 +15,11 @@ input[type=checkbox]::before {
     position: relative;
     width: 20px;
     height: 20px;
-    background-color: white;
+    background-color: #FFF;
     border: 2px solid #dbdbdb;
     border-radius: 4px;
+
+    transition: border-color .5s;
 }
 
 input[type=checkbox]:checked::before {
@@ -33,9 +39,7 @@ input[type=checkbox]:checked::after {
     left: 7px;
     box-sizing: border-box;
     transform: rotate(45deg);
-    border-width: .1rem;
-    border-style: solid;
-    border-color: white;
+    border: .1rem solid #FFF;
     border-top: 0;
     border-left: 0;
 }
