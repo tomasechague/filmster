@@ -42,8 +42,8 @@ function generateBody(headers, rows) {
     return createElement(tbody)
 }
 
-function render($el, config) {
-    const { header, data, onSelectRow } = config
+function render(table) {
+    const { $el, header, data } = table 
     const $header = generateHeader(header)
     const $body = generateBody(header, data)
 
@@ -54,43 +54,51 @@ function render($el, config) {
     $el.append($fragment)
 }
 
+function update(table, data) {
+    table.data = data
+    const $body = generateBody(table.header, table.data)
+
+    table.$el.replaceChild($body, table.$el.querySelector('tbody'))
+}
+
+function onCheckClicked(table, e) {
+    if (e.target.nodeName === 'INPUT') {
+        const isSelected = e.target.checked
+        const toggleRow = Object.assign({}, e.target.dataset)
+
+        if (isSelected) {
+            table.selectedRows = [...table.selectedRows, toggleRow]
+
+            table.onSelectedRow(toggleRow)
+        } else {
+            table.selectedRows = table.selectedRows.filter(function (row) {
+                return row.title !== toggleRow.title
+            })
+
+            table.onDeselectedRow(toggleRow)
+        }
+    }
+}
+
 function init(el, config) {
     const $el = document.querySelector(el)
-    render($el, config)
 
-    let selectedRows = []
-
-    const {
-        onSelectedRows = () => {},
-        onDeselectedRow = () => {}
-    } = config
-
-    $el.addEventListener('click', function (e) {
-        if (e.target.nodeName === 'INPUT') {
-            const isSelected = e.target.checked
-            const toggleRow = Object.assign({}, e.target.dataset)
-
-            if (isSelected) {
-                selectedRows = [...selectedRows, toggleRow]
-
-                config.onSelectedRow(toggleRow)
-            } else {
-                selectedRows = selectedRows.filter(function (row) {
-                    return row.title !== toggleRow.title
-                })
-
-                config.onDeselectedRow(toggleRow)
-            }
-        }
-    });
-
-    function getSelectedRows() {
-        return selectedRows
+    const table = {
+        $el,
+        data: config.data,
+        header: config.header,
+        selectedRows: [],
+        getSelectedRows: () => table.selectedRows,
+        onSelectedRow: config.onSelectedRow || new Function(),
+        onDeselectedRow: config.onDeselectedRow || new Function()
     }
 
-    return {
-        getSelectedRows
-    }
+    render(table)
+
+    table.update = update.bind(null, table),
+    $el.addEventListener('click', onCheckClicked.bind(null, table));
+
+    return table
 }
 
 export default {
