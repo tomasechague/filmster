@@ -1,0 +1,14 @@
+.card-header-actions {
+    padding: .75rem;
+}
+
+.navbar-brand .navbar-item img {
+    width: 180px;
+    max-height: unset;
+}
+
+@media (max-width: 1087px) {
+    .navbar-brand .navbar-item img {
+        width: 120px;
+    }
+}

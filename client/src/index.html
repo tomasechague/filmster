@@ -1,11 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="has-background-light">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon"/>
+
     <title>Filmster</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.css">
+    <link rel="stylesheet" href="/styles/checkbox.css">
+    <link rel="stylesheet" href="/styles/table.css">
+    <link rel="stylesheet" href="/styles/main.css">
 </head>
 <body>
-    <h1>Filmster</h1>
+    <nav class="navbar has-shadow is-spaced" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <img src="/assets/filmster.svg">
+            </a>
+        </div>
+    </nav>
+
+    <div class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-full">
+
+                    <div class="card">
+                        <header class="card-header">
+                            <div class="card-header-title">Películas</div>
+                            <div class="card-header-actions">
+                                <button class="button is-small">Agregar</button>
+                                <button class="button is-small">Editar</button>
+                                <button class="button is-small">Eliminar</button>
+                            </div>
+                        </header>
+
+                        <div class="card-content">
+                            <div class="content">
+                                <!-- Tabla de películas -->
+                                <table class="table" id="movies"></table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+<script src="/index.mjs" type="module"></script>
 </html>
