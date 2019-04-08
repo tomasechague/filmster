@@ -1,1 +1,5 @@
 /node_modules/
+
+/server/database.sqlite
+
+package-lock.json
