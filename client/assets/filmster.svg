@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="343.07mm" height="84.244mm" version="1.1" viewBox="0 0 343.07 84.244" xmlns="http://www.w3.org/2000/svg">
+ <g transform="translate(4.021e-7 -109.58)">
+  <g transform="translate(0 -30.606)" fill="#b3b3b3">
+   <g transform="translate(-34.018)">
+    <rect x="34.018" y="140.18" width="16.631" height="16.631" ry=".59438"/>
+    <rect x="62.24" y="140.18" width="16.631" height="16.631" ry=".59438"/>
+    <rect x="90.462" y="140.18" width="16.631" height="16.631" ry=".59438"/>
+    <rect x="118.68" y="140.18" width="16.631" height="16.631" ry=".59438"/>
+   </g>
+   <g transform="translate(-34.018 67.613)">
+    <rect x="34.018" y="140.18" width="16.631" height="16.631" ry=".59438"/>
+    <rect x="62.24" y="140.18" width="16.631" height="16.631" ry=".59438"/>
+    <rect x="90.462" y="140.18" width="16.631" height="16.631" ry=".59438"/>
+    <rect x="118.68" y="140.18" width="16.631" height="16.631" ry=".59438"/>
+   </g>
+  </g>
+  <path d="m53.94 151.7-39.616 22.872v-22.872-22.872l19.808 11.436z" fill="#5b5b92"/>
+  <g transform="matrix(1.362 0 0 1.362 -47.039 130.08)" fill-opacity=".7098">
+   <circle cx="79.375" cy="15.875" r="15.875" fill="#008fd4"/>
+   <g fill="#fff">
+    <circle cx="79.375" cy="5.783" r="3.7798"/>
+    <circle cx="79.375" cy="25.972" r="3.7798"/>
+    <circle cx="69.17" cy="15.875" r="3.7798"/>
+    <circle cx="89.599" cy="15.875" r="3.7798"/>
+   </g>
+  </g>
+  <text x="110.57043" y="173.90681" fill="#5b5b92" font-family="'Open Sans'" font-size="62.203px" letter-spacing="0px" stroke-width="2.9158" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="110.57043" y="173.90681" fill="#5b5b92" font-family="'Open Sans'" stroke-width="2.9158">Filmster</tspan></text>
+ </g>
+</svg>
