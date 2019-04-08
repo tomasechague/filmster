@@ -15,22 +15,17 @@ function generateHeader(headers) {
 
 function generateBody(headers, rows) {
     const trs = rows.map(function (row) {
-        const dataset = {}
-
         const tds = headers.map(function (header) {
             const { label, field } = header
             const cell = row[field]
 
-            dataset['data-' + field] = cell;
-
             return h('td', { 'data-label': label }, cell)
         })
 
-        const check = h(
-            'td',
-            {},
-            h('input', { type: 'checkbox', ...dataset })
-        )
+        const $check = createElement(h('input', { type: 'checkbox' }))
+        $check.row = row;
+
+        const check = h('td', {}, $check)
 
         return h('tr', {}, [
             check,
@@ -64,7 +59,7 @@ function update(table, data) {
 function onCheckClicked(table, e) {
     if (e.target.nodeName === 'INPUT') {
         const isSelected = e.target.checked
-        const toggleRow = Object.assign({}, e.target.dataset)
+        const toggleRow = e.target.row
 
         if (isSelected) {
             table.selectedRows = [...table.selectedRows, toggleRow]
