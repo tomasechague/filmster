@@ -16,8 +16,9 @@ function generateHeader(headers) {
 function generateBody(headers, rows) {
     const trs = rows.map(function (row) {
         const tds = headers.map(function (header) {
-            const { label, field } = header
-            const cell = row[field]
+            const { label, field, render } = header
+            const cellData = row[field]
+            const cell = render ? render(cellData) : cellData
 
             return h('td', { 'data-label': label }, cell)
         })
