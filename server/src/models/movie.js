@@ -47,10 +47,23 @@ const create = (data) =>
 		Movie.create(data)
 	)
 
+const get = (id) => Movie.findOne({where: {id: id}}).then(movie => movie)
+
+const update = (id, data) => {
+	return Movie.findOne({where: {id: id}}).then(movie => {
+		if (movie != null) {
+			return movie.update(data).then(d => d)
+		}
+		return null
+	})	
+}
+
 const MovieModel = {
 	Movie: Movie,
 	getAll: getAll,
-	create: create
+	create: create,
+	get: get,
+	update: update
 }
 
 module.exports = MovieModel
