@@ -3,7 +3,7 @@ export function h(type, props={}, children=[]) {
 }
 
 export function createElement(vdom) {
-    if (!vdom.type) {
+    if (!vdom.type || vdom instanceof HTMLElement) {
         return vdom
     }
 
