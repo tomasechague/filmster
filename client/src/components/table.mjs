@@ -96,6 +96,4 @@ function init(el, config) {
     return table
 }
 
-export default {
-    init
-}
+export default init

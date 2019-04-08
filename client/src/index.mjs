@@ -1,7 +1,7 @@
 import Table from './components/table.mjs'
 import movieService from './api/movie.mjs'
 
-const table = Table.init('#movies', {
+const table = Table('#movies', {
     header: [
         { label: 'Título', field: 'title' },
         { label: 'Descripción', field: 'description' },
