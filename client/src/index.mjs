@@ -7,7 +7,11 @@ const table = Table('#movies', {
         { label: 'Descripción', field: 'description' },
         { label: 'Año', field: 'year' },
         { label: 'Pais', field: 'country' },
-        { label: 'Guionistas', field: 'writers' }
+        {
+            label: 'Guionistas',
+            field: 'writers',
+            render: function (data) { return data.join(', ') }
+        }
     ],
     data: [],
     onSelectedRow: function (row) {
