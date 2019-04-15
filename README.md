@@ -22,9 +22,12 @@ Aplicación utilizada en la cursada 2019 de Ingenieria de Software. UTN-FRLP
 
 
 
+
+
 # GRUPO 3
 
 ## Integrantes
 
 * Fernandez, Joaquin
 * Echague, Tomas
+* Alvarez, Juan Pablo
