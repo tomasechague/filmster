@@ -18,3 +18,9 @@ Aplicación utilizada en la cursada 2019 de Ingenieria de Software. UTN-FRLP
 ## Iniciar la app en modo producción
 
 `npm start`
+
+# GRUPO 3
+
+## Integrantes
+
+* Fernandez, Joaquin
