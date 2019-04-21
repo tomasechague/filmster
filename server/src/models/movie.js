@@ -58,12 +58,23 @@ const update = (id, data) => {
 	})	
 }
 
+const movieDelete = (id) => {
+	return Movie.findOne({where: {id: id}}).then(movie => {
+		if(movie != null){
+			return movie.destroy()
+		}
+		return null
+	})
+	
+}
+
 const MovieModel = {
 	Movie: Movie,
 	getAll: getAll,
 	create: create,
 	get: get,
-	update: update
+	update: update,
+	delete: movieDelete
 }
 
 module.exports = MovieModel
