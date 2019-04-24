@@ -11,7 +11,8 @@ const table = Table('#movies', {
             label: 'Guionistas',
             field: 'writers',
             render: function (data) { return data.join(', ') }
-        }
+        },
+        { label: 'Lenguaje', field: 'language' },
     ],
     data: [],
     onSelectedRow: function (row) {
@@ -22,4 +23,9 @@ const table = Table('#movies', {
     }
 })
 
+var botonAgregar= document.getElementById("pelicula-agregar");
+botonAgregar.addEventListener("click",function(){alert('En desarrollo')});
+
 movieService.getAll().then(table.update)
+
+
