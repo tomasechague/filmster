@@ -42,7 +42,11 @@ const $refs = {
     moviePlot: document.querySelector('#moviePlot'),
     movieReleaseDate: document.querySelector('#movieReleaseDate'),
     movieCountry: document.querySelector('#movieCountry'),
-    movieWriters: document.querySelector('#movieCountry')
+    movieRuntime: document.querySelector('#movieRuntime'),
+    movieLanguage: document.querySelector('#movieLanguage'),
+    movieGeneres: document.querySelector('#movieGeneres'),
+    movieWriters: document.querySelector('#movieWriters'),
+    movieDirectors: document.querySelector('#movieDirectors')
 }
 
 /*
@@ -59,6 +63,10 @@ function closeModal() {
     $refs.modal.classList.remove('is-active')
 }
 
+function parseCSV(val) {
+    return val.split(',').flatMap(v => v.split());
+}
+
 /*
  * Guarda una pelicula
  */
@@ -67,7 +75,12 @@ function saveMovie() {
         name: $refs.movieName.value,
         plot: $refs.moviePlot.value,
         year: new Date($refs.movieReleaseDate.value),
-        country: $refs.movieCountry.value
+        country: $refs.movieCountry.value,
+        runtime: +$refs.movieRuntime.value,
+        language: $refs.movieLanguage.value,
+        generes: parseCSV($refs.movieGeneres.value),
+        writers: parseCSV($refs.movieWriters.value),
+        directors: parseCSV($refs.movieDirectors.value)
     }
 
     console.log(movie)
