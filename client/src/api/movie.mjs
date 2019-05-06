@@ -3,6 +3,7 @@ function getAll() {
         .then(result => result.json())
 }
 
+
 function createMovie(movie){
 	const año = movie.year.toString().slice(10, 15);
 	const data = JSON.stringify({ 
@@ -24,10 +25,20 @@ function createMovie(movie){
     })
 	.then(res => res)
     .then(json => console.log(json));
-}
+}    
 
+function deleteMovie(id){
+	const url = '/api/v1/movies/'+id
+	return fetch(url, {
+        method: 'DELETE',
+        headers: {'Content-Type': 'application/json'},
+	})
+	.then(res => res)
+    .then(json => console.log(json));
+}
 
 export default {
     getAll,
-    createMovie
+    createMovie,
+	deleteMovie
 }

@@ -36,7 +36,7 @@ const $refs = {
     saveMovieBtn: document.querySelector('#saveMovieBtn'),
     addMovieBtn: document.querySelector('#addMovieBtn'),
     closeModalBtn: document.querySelector('#closeModalBtn'),
-
+    deleteMovieBtn: document.querySelector('#deleteMovieBtn'),
     modal: document.querySelector('#modal'),
 
     movieName: document.querySelector('#movieName'),
@@ -87,6 +87,12 @@ function saveMovie() {
     location.reload()
 }
 
+function deleteMovie(){
+    table.getSelectedRows().forEach(function(valor,indice){
+        movieService.deleteMovie(valor.id);
+    })
+    location.reload();
+}
 
 
 // Levantamos los listeners de la app
@@ -94,4 +100,4 @@ $refs.addMovieBtn.addEventListener('click', openModal)
 $refs.cancelModalBtn.addEventListener('click', closeModal)
 $refs.closeModalBtn.addEventListener('click', closeModal)
 $refs.saveMovieBtn.addEventListener('click', saveMovie)
-
+$refs.deleteMovieBtn.addEventListener('click',deleteMovie)
