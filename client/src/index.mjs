@@ -73,7 +73,7 @@ function parseCSV(val) {
  */
 function saveMovie() {
     const movie = {
-        name: $refs.movieName.value,
+        title: $refs.movieName.value,
         plot: $refs.moviePlot.value,
         year: new Date($refs.movieReleaseDate.value),
         country: $refs.movieCountry.value,
@@ -83,9 +83,11 @@ function saveMovie() {
         writers: parseCSV($refs.movieWriters.value),
         directors: parseCSV($refs.movieDirectors.value)
     }
-
-    console.log(movie)
+    movieService.createMovie(movie)
+    location.reload()
 }
+
+
 
 // Levantamos los listeners de la app
 $refs.addMovieBtn.addEventListener('click', openModal)
