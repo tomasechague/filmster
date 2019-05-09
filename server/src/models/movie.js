@@ -36,16 +36,11 @@ const Movie = db.define('Movie', {
 	writers: {
 		type: Sequelize.JSON
 	}
-}, {
-  tableName: 'Movie'
-})
+}, { tableName: 'Movie' })
 
 const getAllMovies = () => Movie.findAll().then(movies => movies.slice(0, 1))
 
-const createMovie = (data) =>
-	Movie.sync().then(() =>
-		Movie.create(data)
-	)
+const createMovie = (data) => Movie.create(data)
 
 const getMovie = (id) => Movie.findOne({where: {id: id}}).then(movie => movie)
 
