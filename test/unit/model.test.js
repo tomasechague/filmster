@@ -69,3 +69,37 @@ test('Obtener película', async () => {
 
     // Completar test
 });
+
+
+test('Obtener películas', async () => {
+    const movieData = {
+        title: 'Back to the Future',
+        description: 'Marty McFly, a 17-year-old high school student, is accidentally sent thirty years into the past in a time-traveling DeLorean invented by his close friend, the maverick scientist Doc Brown.',
+        year: 1985,
+        runtime: 116,
+        country: 'United States',
+        language: 'English',
+        genres: ['Adventure', 'Comedy', 'Science Fiction'],
+        directors: ['Robert Zemeckis'],
+        writers: ['Robert Zemeckis', 'Bob Gale']
+    };
+
+    const movieData2 = {
+        title: 'Back to the Future',
+        description: 'Marty McFly, a 17-year-old high school student, is accidentally sent thirty years into the past in a time-traveling DeLorean invented by his close friend, the maverick scientist Doc Brown.',
+        year: 1985,
+        runtime: 116,
+        country: 'United States',
+        language: 'English',
+        genres: ['Adventure', 'Comedy', 'Science Fiction'],
+        directors: ['Robert Zemeckis'],
+        writers: ['Robert Zemeckis', 'Bob Gale']
+    };
+
+    
+    const movie = await MovieModels.create(movieData)
+    const movie2 = await MovieModels.create(movieData2)
+    const movies = await MovieModels.getAll();
+
+    expect(movies.length).toBe(2);
+});
