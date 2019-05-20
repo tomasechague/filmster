@@ -33,7 +33,6 @@ test('Crear película por API', async () => {
         writers: ['Robert Zemeckis', 'Bob Gale']
     };
     const URL = `${baseURL}/movies`;
-    const req = await fetch(URL)
     await fetch(URL, {
         method: 'POST',
         body: JSON.stringify(movieData),
